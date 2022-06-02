@@ -1,0 +1,14 @@
+.container{
+    width: 480px;
+    height: 480px;
+    border: 10px red solid;
+    display: grid;
+    
+}
+.cell{
+  
+    flex: 1 1 0;
+    display: inline-block;
+    
+    border: 1px black solid;
+}
