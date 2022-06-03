@@ -10,7 +10,7 @@ slider.oninput = function(){
     v = this.value;
     a = v**2;
     output.innerHTML = this.value+' x '+this.value;
-  //  createDiv(a,v)
+    createDiv(a,v)
 }
 
 
