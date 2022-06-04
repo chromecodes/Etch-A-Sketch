@@ -50,13 +50,11 @@ eraser.addEventListener('click', function(e){
     });
 });*/
 });
-function rainbowPen(){
+clear.addEventListener('click', function(){
     grids = document.querySelectorAll ('.cell');
-    grids.forEach((grid) => {grid.addEventListener('mouseenter', function(e){
-        e.target.style.cssText = 'background-color: '+ multiColour()+';';
+    grids.forEach((grid) => {grid.style.cssText = 'transition: background-color 1s ease-in-out; background-color: aliceblue;';
         });
     });
-}
 
 function multiColour(){
     rainBow = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']

@@ -24,12 +24,45 @@ body{
     justify-content: center;
     gap: 25px;
 }
+.container{
+    width: 500px;
+    height: 500px;
+    border: 3px gainsboro solid;
+    background-color: gainsboro;
+    display: grid;
+    grid-gap: 1px;
+}
+.cell{  
+    background-color: aliceblue;
+    transition: background-color 0.25s ease-in-out;
+}
 .controls{
     
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
+}
+.selector{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.mode{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.clear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 .footer{
     padding: 10px;
@@ -41,7 +74,8 @@ body{
 
 }
 
-button{
+
+.btn{
     width: 150px;
     height: 50px;
     color: black;
@@ -52,11 +86,46 @@ button{
     padding: 5px;
     transition: transform 0.25s ease-in-out;
 }
-button:hover{
+.btn:hover{
     color: rgb(230, 230, 230);
     background-color: rgb(0, 0, 0);
     transform: scale(1.1) ;
 }
+.pen, .canvas {
+    width: 150px;
+    height: 50px;
+    color: black;
+    background-color: rgb(230, 230, 230);
+    font-size: 18px;
+    border: 1px black solid;
+    border-radius:20px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input[type=color] {
+   margin-top: 3px;
+   height: 35px;
+   width: 35px;
+   border-radius: 50%;
+   box-shadow: 0px 0px 4px 1px #a3a3a3;
+}
+
+input[type=color]::-webkit-color-swatch {
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+}
+
+
 .sliderContainer{
     display: flex;
     gap: 10px;
@@ -97,16 +166,3 @@ button:hover{
     background: black;
     cursor: pointer;
   }
-.container{
-    width: 500px;
-    height: 500px;
-    border: 3px gainsboro solid;
-    background-color: gainsboro;
-    display: grid;
-    grid-gap: 1px;
-}
-.cell{  
-    background-color: aliceblue;
-
-   
-}
