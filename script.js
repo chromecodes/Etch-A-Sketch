@@ -5,36 +5,56 @@ rainbow = document.getElementById('rainbow')
 classic = document.getElementById('classic')
 eraser = document.getElementById('eraser')
 clear = document.getElementById('clear')
+pen = document.getElementById('pen')
+canvas = document.getElementById('canvas')
 
 let v = slider.value;
 a = v*v;
 c = 0;
-penColour = 'black' ;
+active = ""
+penColour = pen.value;
+bg = canvas.value
+console.log(bg);
+console.log(canvas.value);
 output.innerHTML = slider.value+' x '+slider.value;
 createDiv(a,v)
+
+pen.addEventListener('click', function(e){
+    pen.addEventListener("change", function(e){
+        classic.style.cssText = ''
+        rainbow.style.cssText = ''
+        eraser.style.cssText = ""
+        penColour = e.target.value;
+        active = e.target.id
+        listen(e);
+    });
+});
+canvas.addEventListener('click', function(e){
+    canvas.addEventListener("change", function(e){
+        bg = e.target.value
+        active = e.target.id
+        grids = document.querySelectorAll ('.cell');
+            grids.forEach((grid) => {grid.style.cssText = ' background-color:'+bg+';';
+            });
+        });
+        listen();
+    });
+    
 
 classic.addEventListener('click', function(e){
     classic.style.cssText = ' color: rgb(230, 230, 230); background-color: rgb(0, 0, 0);'
     rainbow.style.cssText = ''
     eraser.style.cssText = ""
     penColour = "black"
-    console.log(penColour);
-    console.log(e.target.id);
-    listen(e);
- /*   grids = document.querySelectorAll ('.cell');
-    grids.forEach((grid) => {grid.addEventListener('mouseenter', function(e){
-        e.target.style.cssText = 'background-color: '+ penColour+';';
-    });
-});*/
+    active = e.target.id
+    listen();
 });
 rainbow.addEventListener('click', function(e){
     classic.style.cssText = ' '
     rainbow.style.cssText = 'color: rgb(230, 230, 230); background-color: rgb(0, 0, 0);'
     eraser.style.cssText = ' '
-    listen(e);
-    /*rainbowPen();
-
-    console.log(penColour);*/
+    active = e.target.id
+    listen();
 });
 
 eraser.addEventListener('click', function(e){
@@ -43,18 +63,15 @@ eraser.addEventListener('click', function(e){
     eraser.style.cssText = ' color: rgb(230, 230, 230); background-color: rgb(0, 0, 0);'
     penColour = "aliceblue"
     console.log(penColour);
-    listen(e);
-  /*  grids = document.querySelectorAll ('.cell');
-    grids.forEach((grid) => {grid.addEventListener('mouseenter', function(e){
-        e.target.style.cssText = 'background-color: '+ penColour+';';
-    });
-});*/
+    active = e.target.id
+    listen();
 });
 clear.addEventListener('click', function(){
     grids = document.querySelectorAll ('.cell');
-    grids.forEach((grid) => {grid.style.cssText = 'transition: background-color 1s ease-in-out; background-color: aliceblue;';
+    grids.forEach((grid) => {grid.style.cssText = 'transition: background-color 1s ease-in-out; background-color: '+bg+';';
         });
     });
+
 
 function multiColour(){
     rainBow = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']
@@ -65,7 +82,7 @@ function multiColour(){
         let pen = rainBow[c];
         c++;
         return pen;
-    }; 
+  }; 
 }
 
 
@@ -93,11 +110,11 @@ function createDiv(a,v){
         container.appendChild(div);  
         container.style.cssText = `grid-template-columns: repeat(${v}, 1fr)`
     }
-   
+   listen()
 }
 
-function listen(e){
-    if(e.target.id == "rainbow"){
+function listen(){
+    if(active == "rainbow"){
         grids = document.querySelectorAll ('.cell');
         grids.forEach((grid) => {grid.addEventListener('mouseenter', function(e){
             e.target.style.cssText = 'background-color: '+ multiColour()+';';
