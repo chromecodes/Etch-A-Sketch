@@ -6,7 +6,7 @@ let v = slider.value;
 a = v*v;
 output.innerHTML = slider.value+' x '+slider.value;
 slider.oninput = function(){
-   // clearDiv(a);
+    clearDiv(a);
     v = this.value;
     a = v**2;
     output.innerHTML = this.value+' x '+this.value;
