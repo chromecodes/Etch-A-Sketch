@@ -180,7 +180,7 @@ function listen(){
 
 slider.addEventListener('mousemove', function(){
     let l = slider.value*1.5 ;
-    let color = 'linear-gradient(90deg, rgb(0,0,0)'+l+'%, rgb(211, 211, 211)'+l+'%)';
+    let color = 'linear-gradient(90deg, rgb(128, 0, 0)'+l+'%, rgb(255, 185, 153)'+l+'%)';
     slider.style.background = color;
 })
 

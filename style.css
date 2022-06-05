@@ -1,7 +1,8 @@
 :root{
     --primary-light: #ffeee6;
-    --secondary-light:;
-    --primary-dark: #000000;
+    --secondary-light:#ffb999;
+    --primary-dark: #800000;
+    --secondary-dark:#4d0000;
 }
 
 *{
@@ -15,20 +16,21 @@
     padding: 10px;
     font-size: 36px;
     text-transform: uppercase;
+    margin-bottom: 5px;
     /*border-bottom: 3px solid;*/
 }
 body{
     background-color: var(--primary-light);
     color: var(--primary-dark);
-    /*min-height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: stretch;*/
+    align-items: stretch;
 }
 .main{
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 50px;
 }
 .container{
     width: 500px;
@@ -46,40 +48,41 @@ body{
     opacity: 0.1;
 }
 .controls{
-    
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
+    justify-content: center;
 }
 .selector{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 .mode{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 .clear {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 .footer{
     padding: 10px;
     font-size: 18px;
-    /*border-top: 3px solid;
+    margin-top: 2px;
     display: flex;
     justify-content: center;
-    align-items: center;*/
+    align-items: center;
+    gap: 5px;
 }
 
 
@@ -89,7 +92,7 @@ body{
     color: inherit;
     background-color: inherit;
     font-size: 18px;
-    border: 1px black solid;
+    border: 1px var(--primary-dark) solid;
     border-radius:20px;
     padding: 5px;
     transition: transform 0.25s ease-in-out;
@@ -102,10 +105,10 @@ body{
 .pen, .canvas {
     width: 150px;
     height: 50px;
-    color: black;
+    color: inherit;
     background-color: inherit;
     font-size: 18px;
-    border: 1px black solid;
+    border: 1px var(--primary-dark) solid;
     border-radius:20px;
     padding: 18px;
     display: flex;
@@ -150,7 +153,7 @@ input[type=color]::-webkit-color-swatch-wrapper {
     width: 100%;
     height: 10px;
     border-radius: 10px;
-    background: linear-gradient(90deg, black 25%, #d3d3d3 25%);
+    background: linear-gradient(90deg, var(--primary-dark) 25%, var(--secondary-light) 25%);
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -167,7 +170,7 @@ input[type=color]::-webkit-color-swatch-wrapper {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: black;
+    background: var(--secondary-dark);
     cursor: pointer;
 }
   
@@ -175,6 +178,15 @@ input[type=color]::-webkit-color-swatch-wrapper {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: black;
+    background: var(--secondary-dark);
     cursor: pointer;
 }
+.fa-github {
+    color: var(--primary-dark);
+    font-size: 24px;
+    transition: transform 0.8s ease-in-out;
+  }
+  
+  .fa-github:hover {
+    transform:rotate(720deg) scale(1.2);
+  }
