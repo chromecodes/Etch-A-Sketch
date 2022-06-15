@@ -87,8 +87,8 @@ clear.addEventListener('click', function(){
 
 
 function multiColour(){
-    rainBow = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red'];
-    if( c == 7 ){
+    rainBow = ['violet','darkmagenta', 'indigo', 'blueviolet','slateblue','navy','blue', 'aqua','aquamarine', 'springgreen','green', 'yellowgreen','yellow', 'orange','orangered', 'red'];
+    if( c == rainBow.length ){
         c = 0;
     };
     while( c < rainBow.length){
